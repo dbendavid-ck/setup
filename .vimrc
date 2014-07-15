@@ -18,7 +18,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/tComment'
 Plugin 'yegappan/mru'
 Plugin 'kien/ctrlp.vim'
-Plugin 'ctags.vim'
+" Plugin 'ctags.vim'
+Plugin 'scrooloose/syntastic'
+" Plugin 'vim-php/phpctags'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -42,7 +44,7 @@ nmap <c-o> :NERDTreeToggle<CR>
 " " Find the current file in NERDTree file structure
 nmap <c-f> :NERDTreeFind<CR>
 
-
+set tags=tags
 set wildmenu
 set nowrap                      " Do not wrap long lines
 set autoindent                  " Indent at the same level of the previous line
@@ -57,3 +59,5 @@ set nu
 set fileformats+=dos
 set incsearch
 nmap kk 20k
+
+nmap <c-b> viw<c-]>
