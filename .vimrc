@@ -17,10 +17,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/tComment'
 Plugin 'yegappan/mru'
-Plugin 'kien/ctrlp.vim'
-" Plugin 'ctags.vim'
 Plugin 'scrooloose/syntastic'
-" Plugin 'vim-php/phpctags'
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -59,5 +57,8 @@ set nu
 set fileformats+=dos
 set incsearch
 nmap kk 20k
-
+set tags=/www/git-repos/pm/tags
+" ctrl-b to search ctags for current word
 nmap <c-b> viw<c-]>
+
+nnoremap <c-g> :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
